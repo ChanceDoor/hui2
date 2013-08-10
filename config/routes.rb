@@ -1,8 +1,13 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'users#show'
   end
-  root :to => "home#index"
   devise_for :users
-  resources :users
+
+  resources :users do
+    resources :conferences
+  end
 end

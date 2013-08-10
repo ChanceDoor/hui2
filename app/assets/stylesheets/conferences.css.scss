@@ -1,0 +1,67 @@
+// Place all the styles related to the Conferences controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.data-div{
+  height:50px;
+  text-align:center;
+  padding:10px;
+  display:none;
+}
+
+.data-conf-container{
+  width:100%;
+  float:left;
+  text-align:center;
+  margin-top:15px;
+}
+.data-conf{
+  width:60%;
+  float:left;
+  text-align:center;
+  margin:0px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+}
+.data-option-center{
+  width:24px;
+  height:24px;
+  float:left;
+  text-align:center;
+  margin:0px;
+  padding:2px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+}
+.data-option-right{
+  float:left;
+  text-align:center;
+  margin:0px;
+  color:#A3A3A3;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-top-left-radius: 0px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+.data-pop{
+  border: 1px solid #B8B2B2;
+  border-radius: 8px;
+  position:absolute;
+  background:white;
+  display:none;
+}

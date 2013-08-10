@@ -7,15 +7,15 @@ en:
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account was not activated yet."
-      invalid: "Invalid email or password."
+      already_authenticated: "你已经登陆了"
+      inactive: "你的账号尚未激活"
+      invalid: "账号或密码错误"
       invalid_token: "Invalid authentication token."
-      locked: "Your account is locked."
-      not_found_in_database: "Invalid email or password."
-      timeout: "Your session expired, please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
+      locked: "该账号已被冻结"
+      not_found_in_database: "没有该用户"
+      timeout: "你的账号已过期,请重新登录"
+      unauthenticated: "请登录"
+      unconfirmed: "请确认你的账号"
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
@@ -41,8 +41,8 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
       updated: "You updated your account successfully."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
+      signed_in: "登录成功"
+      signed_out: "已登出"
     unlocks:
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
@@ -52,8 +52,8 @@ en:
       already_confirmed: "was already confirmed, please try signing in"
       confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
       expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      not_found: "不存在"
+      not_locked: "已解锁"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "1个错误导致%{resource}无法保存:"
+        other: "%{count} 个错误导致 %{resource} 无法保存:"

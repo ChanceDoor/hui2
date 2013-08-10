@@ -1,0 +1,114 @@
+<div>
+  <%for i in 0..7 do%>
+    <% dtime = Time.now+i.day%>
+    <button id="<%=i%>" disabled="disabled" class="btn data-btn" type="button" ><%=dtime.strftime("%m-%d")%></button>
+  <%end%>
+</div>
+<div>
+  <button class="btn" style="padding:8px;margin:10px;font-size:30px" data-toggle="modal" data-target="#add"><span style="font-weight:bold;color:green;">+</span></button>
+</div>
+<div class="modal hide fade" id="add" >
+   <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>添加会议</h3>
+   </div>
+   <div class="modal-body">
+      <%= form_for [current_user, current_user.conferences.build],:html => {:multipart => true},:remote => true,:update=>'result' do |f|%>
+          <%= f.label "标题"%>
+          <%= f.text_field :title%><br />
+        
+          <%= f.label "地点"%>
+          <%= f.text_field :location%><br />
+ 
+          <%= f.label "开始时间"%>
+          <%= f.datetime_select(:starttime,{:start_year=>Time.now.year,:end_year=>Time.now.year+10,:default =>Time.now,:discard_second => true,:use_month_numbers => true},{:style => 'width:70px'}) %><br />
+
+          <%= f.label "结束时间"%>
+          <%= f.datetime_select(:endtime,{:start_year=>Time.now.year,:end_year=>Time.now.year+10,:default =>Time.now,:discard_second => true,:use_month_numbers => true},{:style => 'width:70px'}) %><br />
+
+          <%= f.label "内容"%>
+          <%= f.text_area :body, :size=>'20x10'%><br />
+
+          <%= f.label "上传图片"%>
+          <%= f.file_field :figure%><br />
+        
+      
+   </div>
+      <div class="modal-footer">
+         <div id="result" style="float:right"></div>
+         <button id="add-btn" class="btn btn-primary" data-loading-text="Loading...">保存</button>
+      <%end%>
+         <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+      </div>
+    </div>
+<% exists = []%>
+<%@conferences.each do |key,cs|%>
+<% exists.push(key)%>
+<div id="confs<%=key-Time.now.day%>" class="data-div">
+  <%cs.each do |c|%>
+  <div class="data-conf-container">  
+    <div id="<%=c.class.name%><%=c.id%>" class="btn data-conf"  data-toggle="modal" data-target="#pop-<%=c.class.name%><%=c.id%>">
+      <%=c.title%>
+      <%= c.starttime.strftime("%H:%M")%>
+    </div>
+      <div class="btn data-option-center">
+        <%=image_tag 'store.png',:id=>'store',:flag=>'1'%>
+      </div>
+      <div class="btn data-option-center">
+        <%=image_tag 'warning.png',:id=>'warn'%>
+      </div>
+      <div class="btn data-option-center">
+        <%=image_tag 'delete.png',:id=>'delete'%>
+      </div>
+      <div class="btn data-option-right">
+        share
+      </div>
+   </div>
+    <div class="modal hide fade data-pop" id="pop-<%=c.class.name%><%=c.id%>" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3><%=c.title%></h3>
+        <span><%=c.starttime.strftime("%Y-%m-%d %H:%M")%>~<%=c.endtime.strftime("%Y-%m-%d %H:%M")%></span>
+      </div>
+      <div class="modal-body">
+        <p><%=c.location%></p>
+        <p><%=image_tag c.figure%></p>
+        <p><%=c.body%></p>
+      </div>
+      <div class="modal-footer">
+         <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+      </div>
+    </div>
+  <%end%>
+</div>
+<%end%>
+<%exists.each do |k| %>
+  <script>
+    $('#<%=k-Time.now.day%>').removeAttr("disabled");
+    $('.data-option-center').click(function(){
+      var picName = $(this).children().first().attr('id');
+      var picFlag = $(this).children().first().attr('flag');
+      switch(picName){
+        case 'store':
+          if(picFlag == 1){
+            $(this).children().first().attr('src','<%=image_path "stored.png"%>');
+            $(this).children().first().attr('flag','0');
+          }else{
+            $(this).children().first().attr('src','<%=image_path "store.png"%>');
+            $(this).children().first().attr('flag','1');
+          }
+          break;
+        case 'warn':
+          if(picFlag == 1){
+            $(this).children().first().attr('src','<%=image_path "warned.png"%>');
+            $(this).children().first().attr('flag','0');
+          }else{
+            $(this).children().first().attr('src','<%=image_path "warning.png"%>');
+            $(this).children().first().attr('flag','1');
+          }
+          break;
+        default:
+      }
+    });
+  </script>
+<%end%>
