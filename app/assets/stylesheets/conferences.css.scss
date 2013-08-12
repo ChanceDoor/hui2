@@ -1,6 +1,57 @@
 // Place all the styles related to the Conferences controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar .brand{
+  color:#FFFFFF;
+  text-shadow:0 1px 0 rgb(138, 120, 120);
+}
+
+.navbar-inner{
+  height:30px;
+  background-image: linear-gradient(to bottom, #FF0000, #C20101);
+}
+
+.navbar .nav {
+  margin: 6px 10px 0 0;
+}
+
+li {
+  list-style-type:none;
+}
+
+.carousel ol{
+  top:90%;
+  right:50%;
+}
+.item img{
+  margin:0 auto;
+}
+
+#ad-l{
+  width:10%;
+}
+#ad-r{
+  width:10%;
+}
+#centercon{
+  width:80%;
+  float:left;
+  padding-bottom:100px;
+}
+
+.news img{
+  float:left;
+  margin-left: 2%;
+  width:30%;
+}
+
+.day{
+  width:100px;
+  height:100px;
+  margin-bottom:4px;
+  position:relative;
+}
+
 .data-div{
   height:50px;
   text-align:center;
@@ -64,4 +115,14 @@
   position:absolute;
   background:white;
   display:none;
+  margin-top:50%;
+}
+
+.footbtn{
+  width:15%;
+}
+footer{
+  width:100%;
+  position:fixed;
+  bottom:0; 
 }

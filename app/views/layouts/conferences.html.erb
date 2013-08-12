@@ -13,7 +13,7 @@
     <div class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
         <div class="container">
-          <%= render 'layouts/navigation' %>
+          <%= render 'layouts/confnav' %>
         </div>
       </nav>
     </div>
@@ -26,6 +26,13 @@
             </div>
           </div>
           <footer>
+            <div style="margin:0 auto;">
+              <button class="btn btn-danger footbtn"><%=image_tag 'stored.png'%></button>
+              <button class="btn btn-danger footbtn"><%=image_tag 'warned.png'%></button>
+              <button class="btn btn-danger footbtn"><%=image_tag 'delete.png'%></button>
+              <button class="btn btn-danger footbtn"><%=image_tag 'store.png'%></button>
+              <button class="btn btn-danger footbtn"><%=image_tag 'warning.png'%></button>
+            </div>
           </footer>
         </div>
       </div> <!--! end of .container -->
