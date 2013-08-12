@@ -38,37 +38,34 @@
   </div>
   
   <% for i in 1...@days do %>
-    <% @conferences.each do |k,cs|%>
-        <% @conferences.each do |k,cs|%>
-          <button   class="btn day" data-toggle="modal" data-target="#pop-<%=i%>" flag="<%=i%>">
-            <div style="position:absolute;top:2px;"><%=Time.now.strftime("%-m-")+i.to_s%></div>
-            <%if k == i %>
-              <div><%=image_tag cs.first.figure%></div>
-              <div style="position:absolute;bottom:2px;font-size:5px"><%=cs.first.title%></div>
-            <% end %>
-          </button>
-          <div class="modal hide fade data-pop" id="pop-<%=i%>" >
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <%if k == i %>
-                <h3><%=cs.first.title%></h3>
-                <span><%=cs.first.starttime.strftime("%Y-%m-%d %H:%M")%>~<%=cs.first.endtime.strftime("%Y-%m-%d %H:%M")%></span>
+    <button class="btn day" data-toggle="modal" data-target="#pop-<%=i%>" flag="<%=i%>">
+      <div style="position:absolute;top:2px;"><%=Time.now.strftime("%-m-")+i.to_s%></div>
+        <%if @conferences[i] %>
+          <div><%=image_tag @conferences[i].first.figure%></div>
+          <div style="position:absolute;bottom:2px;font-size:5px"><%=@conferences[i].first.title%></div>
+        <% end %>
+    </button>
+
+    <div class="modal hide fade data-pop" id="pop-<%=i%>" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <%if @conferences[i] %>
+              <h3><%=@conferences[i].first.title%></h3>
+              <span><%=@conferences[i].first.starttime.strftime("%Y-%m-%d %H:%M")%>~<%=@conferences[i].first.endtime.strftime("%Y-%m-%d %H:%M")%></span>
             </div>
             <div class="modal-body">
-              <p><%=cs.first.location%></p>
-              <p><%=image_tag cs.first.figure%></p>
-              <p><%=cs.first.body%></p>
+              <p><%=@conferences[i].first.location%></p>
+              <p><%=image_tag @conferences[i].first.figure%></p>
+              <p><%=@conferences[i].first.body%></p>
             </div>
-              <%else%>
-                <h3>今天没有会议</h3>
-                </div>
-              <% end%>
+            <%else%>
+              <h3>今天没有会议</h3>
+            </div>
+            <% end%>
             <div class="modal-footer">
               <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
             </div>
-          </div>
-        <% end %>
-    <% end %>
+    </div>
   <%end%>
   <div style="float:right;padding-top:50px"><%=link_to "链接主网","#",:style=>"margin-right:4px"%><%=link_to "扫描微信"%></div>
 </div>
