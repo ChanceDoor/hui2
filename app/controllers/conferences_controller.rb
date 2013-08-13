@@ -8,8 +8,9 @@ class ConferencesController < ApplicationController
     @conferences = confs.group_by{|a| a.starttime.day}
     @days = monthdays(Time.now.year,Time.now.month)
   end
+
   def show
-    @user = User.find(params[:id])
+    @conference = Servconf.find(params[:id])
   end
   
   def create

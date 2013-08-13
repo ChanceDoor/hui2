@@ -8,6 +8,7 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=F2d926f05b024f333b97b3e0d69524e3"></script>
   </head>
   <body class="<%= controller_name %> <%= action_name %>" style="position:relative">
     <div class="navbar navbar-fixed-top">
@@ -27,11 +28,14 @@
           </div>
           <footer>
             <div style="margin:0 auto;">
-              <button class="btn btn-danger footbtn"><%=image_tag 'stored.png'%></button>
-              <button class="btn btn-danger footbtn"><%=image_tag 'warned.png'%></button>
-              <button class="btn btn-danger footbtn"><%=image_tag 'delete.png'%></button>
-              <button class="btn btn-danger footbtn"><%=image_tag 'store.png'%></button>
-              <button class="btn btn-danger footbtn"><%=image_tag 'warning.png'%></button>
+              <ul>
+                <li><a href="#"><%=image_tag "home.png"%></a></li>
+                <li><a href="#"><%=image_tag "search.png"%></a></li>
+                <li><a href="#"><%=image_tag "option.png"%></a></li>
+                <li><a href="#"><%=image_tag "camera-w.png"%></a></li>
+                <li><a href="#"><%=image_tag "people.png"%></a></li>
+                <li><a href="#"><%=image_tag "mic.png"%></a></li>
+              </ul>
             </div>
           </footer>
         </div>

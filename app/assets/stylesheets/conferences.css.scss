@@ -4,6 +4,7 @@
 .navbar .brand{
   color:#FFFFFF;
   text-shadow:0 1px 0 rgb(138, 120, 120);
+  padding: 0 30px 0 0;
 }
 
 .navbar-inner{
@@ -38,7 +39,12 @@ li {
   float:left;
   padding-bottom:100px;
 }
-
+#allmap{
+  width: 80%;
+  height: 80%;
+  overflow: hidden;
+  margin:0;
+}
 .news img{
   float:left;
   margin-left: 2%;
@@ -50,6 +56,17 @@ li {
   height:100px;
   margin-bottom:4px;
   position:relative;
+  padding:0;
+}
+
+.day .title{
+  position:absolute;
+  bottom:0px;
+  font-size:5px;
+  background:rgba(0, 0, 0, 0.38);
+  color: #ffffff;
+  width: 100%;
+  text-shadow:none;
 }
 
 .data-div{
@@ -123,6 +140,30 @@ li {
 }
 footer{
   width:100%;
+  height:40px;
   position:fixed;
+  left:0;
   bottom:0; 
+  background: #131313;
+}
+footer div{height:100%;}
+footer div ul{
+  margin:0;
+  height:100%;
+}
+footer div ul li >a{
+  display:block;
+  height:100%;
+}
+footer div ul li >a:hover{
+  background:#000000;
+}
+footer div ul li{
+  text-align:center;
+  width:16.66%;
+  height:100%;
+  float:left;
+}
+footer div ul li a img{
+  margin-top:10px;
 }

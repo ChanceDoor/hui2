@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <h3><%=@conference.title%></h3><%=link_to "专业会务数据员小李（跑嘛会ID：010）","#"%>
+  <div>开始时间:<%=@conference.starttime.strftime("%-m-%-d %H:%M")%>&nbsp&nbsp结束时间:<%=@conference.endtime.strftime("%-m-%-d %H:%M")%></div>
+  <div>地址:<%=@conference.location%></div>
+  <div id="allmap"></div>
+  <div><%=image_tag @conference.figure%></div>
+  <div><%=@conference.body%></div>
+</div>
+<script type="text/javascript">
+var map = new BMap.Map("allmap");    
+map.centerAndZoom(new BMap.Point(116.404, 39.915), 17);    
+var local = new BMap.LocalSearch(map, {    
+ renderOptions: {map: map, panel: "results"}    
+});    
+local.search("<%=@conference.location%>");
+</script>
