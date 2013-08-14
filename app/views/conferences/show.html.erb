@@ -1,14 +1,28 @@
-<div style="text-align:center">
-  <h3><%=@conference.title%></h3><%=link_to "专业会务数据员小李（跑嘛会ID：010）","#"%>
-  <div>开始时间:<%=@conference.starttime.strftime("%-m-%-d %H:%M")%>&nbsp&nbsp结束时间:<%=@conference.endtime.strftime("%-m-%-d %H:%M")%></div>
-  <div>地址:<%=@conference.location%></div>
-  <div id="allmap"></div>
-  <div><%=image_tag @conference.figure%></div>
-  <div><%=@conference.body%></div>
+<div style="padding: 0 20% 10% 20%;">
+  <h3 style="text-align:center;"><%=@conference.title%></h3>
+  <div style="text-align:center;"><%=link_to "专业会务数据员小李（跑嘛会ID：010）","#","data-toggle"=>"modal","data-target"=>"#contact"%>
+  <div class="modal hide fade" id="contact" >
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>联系信息</h3>
+        </div>
+        <div class="modal-body">
+          <div>XXX@hotmail.com</div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+        </div>
+      </div>
+  </div>
+  <div style="text-align:center;">开始时间:<%=@conference.starttime.strftime("%-m-%-d %H:%M")%>&nbsp&nbsp结束时间:<%=@conference.endtime.strftime("%-m-%-d %H:%M")%></div>
+  <div style="text-align:left">地址:<%=@conference.location%></div>
+  <div><div id="allmap" style="text-align:center"></div></div>
+  <div style="margin:10px"><%=image_tag @conference.figure%></div>
+  <div id="article"><p><%=@conference.body%></p></div>
 </div>
 <script type="text/javascript">
 var map = new BMap.Map("allmap");    
-map.centerAndZoom(new BMap.Point(116.404, 39.915), 17);    
+map.centerAndZoom(new BMap.Point(116.404, 39.915), 16);    
 var local = new BMap.LocalSearch(map, {    
  renderOptions: {map: map, panel: "results"}    
 });    
