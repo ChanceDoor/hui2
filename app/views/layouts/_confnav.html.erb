@@ -1,13 +1,14 @@
 <%= link_to image_tag('logo.png'), root_path, :class => 'brand' %>
-<ul class="nav">
-    <li>
+<ul class="nav" style="width: 40%;">
+    <li style="width: 100%;">
       <form>
-        <input style="border-radius:12px" /><button class="btn btn-danger btn-small" style="margin-top:0px;margin-left:4px"><%=image_tag 'search.png'%></button>
+        <input style="border-radius:12px;width: 75%;"" /><button class="btn btn-danger btn-small" style="margin-top:0px;margin-left:4px;width:18%"><%=image_tag 'search.png'%></button>
       </form>
     </li>
 </ul>
-<ul style="float:right;margin: 6px 10px 0 0;">
+<ul class="nav" style="float:right;margin: 6px 10px 0 0;">
+    <li><%=link_to "欢迎登陆,#{current_user.name}","#",:style=>"padding-top:5px"%></li>
     <li>
-      <button class="btn btn-danger btn-small" style="margin-top:0px;"><%=image_tag 'mic.png'%></button>
+      <button class="btn btn-success btn-small" style="margin-top:0px;">VIP</button>
     </li>
 </ul>

@@ -53,13 +53,23 @@ li {
 }
 
 .day{
-  width:100px;
-  height:100px;
+  width:15.5%;
+  min-width:80px;
   margin-bottom:4px;
+  margin-left:4px;
   position:relative;
-  padding:0;
+  padding:2px;
+  cursor:pointer;
+  overflow:hidden;
+  float:left;
+  border:1px solid #DFDFDF;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
-
+.day .date{position:absolute;top:2px;background:white;z-index:2}
+.day:hover{
+  opacity: 0.5;
+}
+.day img{position:absolute;clip:rect(0px 100px 100px 0px);z-index:0;max-width:none;}
 .day .title{
   position:absolute;
   bottom:0px;
@@ -68,6 +78,7 @@ li {
   color: #ffffff;
   width: 100%;
   text-shadow:none;
+  text-align:center;
 }
 
 .data-div{
@@ -146,6 +157,7 @@ footer{
   left:0;
   bottom:0; 
   background: #131313;
+  z-index:3;
 }
 footer div{height:100%;}
 footer div ul{
@@ -170,5 +182,5 @@ footer div ul li a img{
 }
 
 #allmap{
-  width:300px;height: 300px;overflow: hidden;margin:0;
+  width:200px;height: 200px;overflow: hidden;margin:0;float:left;
 }

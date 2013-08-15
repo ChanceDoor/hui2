@@ -4,3 +4,12 @@
 $(document).ready ->
   $('.day').click ->
     $('#pop-'+$(this).attr('flag')).css('margin-top',window.pageYOffset+50-($(this).height() / 2 ))
+
+  cw = $('.day').width();
+  $('.day').css({'height':cw+'px'});
+  $('.day img').css({'clip':'rect(0px '+cw+'px '+cw+'px 0px)'});
+
+  $(window).resize ->
+    cw = $('.day').width();
+    $('.day').css({'height':cw+'px'});
+    $('.day img').css({'clip':'rect(0px '+cw+'px '+cw+'px 0px)'});
