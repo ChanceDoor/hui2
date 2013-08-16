@@ -6,6 +6,7 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
 
   resources :users do
     resources :conferences
+    resources :informations
   end
   ActiveAdmin.routes(self)
 end
