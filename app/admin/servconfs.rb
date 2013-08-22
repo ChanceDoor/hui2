@@ -4,8 +4,8 @@ ActiveAdmin.register Servconf do
   form :html => { :multipart => true } do |f|
     f.inputs "新增会议" do
       f.input :title
-      f.input :starttime
-      f.input :endtime
+      f.input :start_at
+      f.input :end_at
       f.input :location
       f.input :body
       f.input :figure, :as => :file

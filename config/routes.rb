@@ -1,6 +1,7 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
   root :to => 'static#index'
   devise_for :users
 

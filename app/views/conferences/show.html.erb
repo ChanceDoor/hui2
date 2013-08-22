@@ -1,5 +1,5 @@
-<div style="padding: 0 0 10% 20%;">
-  <div style="float:left;width:80%">
+<div id="centercon">
+  <div style="float:left;width:100%;padding-left:40px">
   <h3 style="text-align:center;"><%=@conference.title%></h3>
   <div style="text-align:center;"><%=link_to "专业会务数据员小李（跑嘛会ID：010）","#","data-toggle"=>"modal","data-target"=>"#contact"%>
   <div class="modal hide fade" id="contact" >
@@ -15,13 +15,15 @@
         </div>
       </div>
   </div>
-  <div style="text-align:center;">开始时间:<%=@conference.starttime.strftime("%-m-%-d %H:%M")%>&nbsp&nbsp结束时间:<%=@conference.endtime.strftime("%-m-%-d %H:%M")%></div>
-  <div style="text-align:left">地址:<%=@conference.location%></div>
-  <div style="margin:10px 10px 10px 0"><%=image_tag @conference.figure%></div>
-  <div id="article"><p><%=@conference.body%></p></div>
+  <div class="row" style="margin:0 auto;border-bottom:1px solid #CECECE;width:700px">
+    <div class="span4" style="width:400px">
+      <div>开始时间:<%=@conference.start_at.strftime("%-m-%-d %H:%M")%>&nbsp&nbsp结束时间:<%=@conference.end_at.strftime("%-m-%-d %H:%M")%></div>
+      <div style="text-align:left">地址:<%=@conference.location%></div>
+    </div>
+    <div id="allmap" class="span4"></div>
   </div>
-  <div style="float:right;width:20%">
-    <div><div id="allmap" style="text-align:center"></div></div>
+  <div style="margin:10px 10px 10px 0;text-align:center"><%=image_tag @conference.figure%></div>
+  <div id="article"><p><%=@conference.body%></p></div>
   </div>
 </div>
 <script type="text/javascript">

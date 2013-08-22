@@ -6,6 +6,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'event-calendar', :require => 'event_calendar'
 gem 'jquery-rails',"2.3.0"
 gem 'activeadmin'
 gem 'carrierwave'

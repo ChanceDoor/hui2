@@ -2,11 +2,15 @@
 class ConferencesController < ApplicationController
   before_filter :authenticate_user!
   def index
-    confs = Servconf.find(:all,:conditions => "month(starttime) = #{Time.now.month}")
-    confs.concat(current_user.conferences.find(:all,:conditions => "month(starttime) = #{Time.now.month}"))
-    p confs.inspect
-    @conferences = confs.group_by{|a| a.starttime.day}
-    @days = monthdays(Time.now.year,Time.now.month)
+    @conferences = Servconf.find(:all,:conditions => "month(start_at) = #{Time.now.month}")
+    @month = (params[:month] || Time.now.month).to_i
+    @year = (params[:year] || Time.now.year).to_i
+    @shown_month = Date.civil(@year, @month)
+    @event_strips = Servconf.event_strips_for_month(@shown_month)
+    #confs.concat(current_user.conferences.find(:all,:conditions => "month(starttime) = #{Time.now.month}"))
+    #p confs.inspect
+    #@conferences = confs.group_by{|a| a.starttime.day}
+    #@days = monthdays(Time.now.year,Time.now.month)
   end
 
   def show
@@ -26,6 +30,7 @@ class ConferencesController < ApplicationController
       end 
     end
   end
+
 
   private
   def monthdays(y,m)

@@ -1,5 +1,5 @@
 @import "bootstrap";
-body { padding-top: 60px; }
+body { padding-top: 40px; }
 @import "bootstrap-responsive";
 .navbar .nav>li>a:focus,
 .navbar .nav>li>a:hover {
@@ -13,3 +13,4 @@ color: #e7e7e7;
 text-decoration: none;
 text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
+.navbar-inner{border:0;}

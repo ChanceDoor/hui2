@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130714152642) do
+ActiveRecord::Schema.define(:version => 20130822132917) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(:version => 20130714152642) do
 
   create_table "conferences", :force => true do |t|
     t.string   "title"
-    t.datetime "starttime"
-    t.datetime "endtime"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.string   "location"
     t.text     "body"
     t.integer  "level"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20130714152642) do
   end
 
   add_index "conferences", ["user_id"], :name => "index_conferences_on_user_id"
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -74,8 +82,8 @@ ActiveRecord::Schema.define(:version => 20130714152642) do
 
   create_table "servconfs", :force => true do |t|
     t.string   "title"
-    t.datetime "starttime"
-    t.datetime "endtime"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.string   "location"
     t.text     "body"
     t.datetime "created_at", :null => false
