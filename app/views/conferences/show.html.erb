@@ -1,5 +1,5 @@
 <div id="centercon">
-  <div style="float:left;width:100%;padding-left:40px">
+  <div style="float:left;width:100%;">
   <h3 style="text-align:center;"><%=@conference.title%></h3>
   <div style="text-align:center;"><%=link_to "专业会务数据员小李（跑嘛会ID：010）","#","data-toggle"=>"modal","data-target"=>"#contact"%>
   <div class="modal hide fade" id="contact" >
@@ -22,8 +22,7 @@
     </div>
     <div id="allmap" class="span4"></div>
   </div>
-  <div style="margin:10px 10px 10px 0;text-align:center"><%=image_tag @conference.figure%></div>
-  <div id="article"><p><%=@conference.body%></p></div>
+  <div id="article"><p><%=simple_format @conference.body%></p></div>
   </div>
 </div>
 <script type="text/javascript">

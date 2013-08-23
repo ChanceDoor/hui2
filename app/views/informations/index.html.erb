@@ -1,19 +1,24 @@
 <div class="row" style="width:950px;float:left">
   <div class="span1" style="width:140px;height:800px;float:left;padding-left:10px">
-    <div style="height:300px;margin-top:10px"><div style="height:60px;width:60px;padding:20px;background:rgba(168, 255, 0, 0.72);color:white;text-align:center">资源数</div></div>
+    <div style="height:200px;margin-top:10px"><div style="height:50px;width:50px;padding:10px;background:rgba(168, 255, 0, 0.72);color:white;text-align:center">资源数<br>467</div></div>
     <div class="info_items"><%=image_tag 'item1.png'%><p>媒资</p></div>
     <div class="info_items"><%=image_tag 'item2.png'%><p>私信</p></div>
     <div class="info_items"><%=image_tag 'item3.png'%><p>会客厅</p></div>
     <div class="info_items"><%=image_tag 'item4.png'%><p>个人设置</p></div>
     <div class="row" style="width:350px">
-      <div class="span2" style="float:left;width:100px"><%=image_tag "avatar.png"%></div>
-      <div class="span2" style="width:140px;color:white"><%=current_user.name%></div>
+      <div class="span2" style="float:left;width:75px"><%=image_tag "tou.png"%></div>
+      <div class="span2" style="width:140px;color:white;margin-left:10px;padding-top:10px;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);"><%=current_user.name%><br>记者</div>
     </div>
   </div>
-  <div class="span11" style="float:left;width:720px;height:800px">
+  <div class="span4" style="float:left;width:300px;height:800px">
     <%@menu = {1=>"今日定制",2=>"封面杂志",3=>"个人资源",4=>"我要参与",5=>"高级分享",6=>"我的收藏",7=>"私活挖人"}%>
     <%@menu.each do |k,v|%>
-      <div class="menu" data-toggle="modal" data-target="#pop-<%=k%>" flag="<%=k%>" >
+      <%if k==1||k==2||k==5||k==6%>
+        <%i = 'menu'%>
+      <%else%>
+        <% i='bluemenu'%>
+      <%end%>
+      <div class="<%=i%>" data-toggle="modal" data-target="#pop-<%=k%>" flag="<%=k%>" >
         <div style="margin: 30% auto;color: white;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);"><%=image_tag 'option'+k.to_s+'.png'%><p><%=v%></p></div>
       </div>
       <div class="modal hide fade data-pop" id="pop-<%=k%>" >
@@ -26,8 +31,9 @@
         </div>
       </div>
     <% end %>
-      <div class="menu">
+      <div class="bluemenu">
         <div style="margin: 40% auto;color: white;">+</div>
       </div>
   </div>
+  <div class="span7"></div>
 </div>

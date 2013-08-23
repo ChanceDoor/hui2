@@ -10,5 +10,12 @@
   width:100px;height:100px;margin:10px;
 }
 .menu:hover{background: rgba(255, 10, 0, 0.6);cursor:pointer}
+.bluemenu{
+  float:left;
+  background:rgba(0, 173, 255, 0.6);
+  text-align:center;
+  width:100px;height:100px;margin:10px;
+}
+.bluemenu:hover{background: rgba(0, 153, 255, 0.6);cursor:pointer}
 
 .info_items{color:white;width:60px;text-align:center;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);}

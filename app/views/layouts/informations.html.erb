@@ -19,34 +19,11 @@
       </nav>
     </div>
     <div id="main" role="main">
-      <div class="container">
+      <div class="container" style="width:1280px">
         <div >
            <div class="row">
             <div class="span12">
-              <div id="ad-h" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#ad-h" data-slide-to="0" class="active"></li>
-    <li data-target="#ad-h" data-slide-to="1"></li>
-    <li data-target="#ad-h" data-slide-to="2"></li>
-  </ol>
-
-  <div class="carousel-inner">
-    <div class="active item" ><a href="http://www.canon.com.cn/"><%=image_tag 'canon1.jpg'%></a></div>
-    <div class="item"><a href="http://www.canon.com.cn/"><%=image_tag 'canon2.jpg'%></a></div>
-    <div class="item"><a href="http://www.canon.com.cn/"><%=image_tag 'canon3.jpg'%></a></div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#ad-h" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#ad-h" data-slide="next">&rsaquo;</a>
-</div>
-
-<div id="ad-l" style="float:left">
-  <a href="http://zt.ztgame.com/"><%=image_tag "juren1.jpg"%></a>
-</div>
               <%= yield %>
-<div id="ad-r" style="float:right">
-  <a href="http://www.ztgame.com/"><%=image_tag "juren2.jpg"%></a>
-</div>
             </div>
           </div>
           <footer>

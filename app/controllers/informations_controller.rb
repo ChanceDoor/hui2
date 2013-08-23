@@ -1,5 +1,4 @@
 class InformationsController < ApplicationController
-  layout 'conferences'
   def index
   end
 

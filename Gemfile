@@ -6,6 +6,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+gem 'rails_kindeditor', '~> 0.4.0'
 gem 'event-calendar', :require => 'event_calendar'
 gem 'jquery-rails',"2.3.0"
 gem 'activeadmin'
