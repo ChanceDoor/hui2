@@ -3,6 +3,7 @@ class ConferencesController < ApplicationController
   before_filter :authenticate_user!
   def index
     @conferences = Servconf.find(:all,:conditions => "month(start_at) = #{Time.now.month}")
+    @conferences = @conferences.group_by{|a| a.start_at.day}
     @month = (params[:month] || Time.now.month).to_i
     @year = (params[:year] || Time.now.year).to_i
     @shown_month = Date.civil(@year, @month)

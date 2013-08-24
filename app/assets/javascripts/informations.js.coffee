@@ -3,5 +3,3 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-  $('.menu').click ->
-    $('#pop-'+$(this).attr('flag')).css('margin-top',window.pageYOffset+50-($(this).height() / 2 ))

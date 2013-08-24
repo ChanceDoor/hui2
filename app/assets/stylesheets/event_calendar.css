@@ -61,10 +61,6 @@ thead tr{height: 100px;background: #E40000;color: white;}
   color: white;
 }
 
-.ec-day-name {
-  font-weight: normal;
-}
-
 /* Rows container and Row */
 .ec-rows {
   position: absolute;
@@ -94,7 +90,13 @@ thead tr{height: 100px;background: #E40000;color: white;}
 }
 
 .ec-day-bg {
+  text-align: center;
+  font-size: 19pt;
+  font-weight: bold;
+  color: rgba(10, 0, 255, 0.64);
   border-left: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+  
 }
 
 .ec-today-bg {
