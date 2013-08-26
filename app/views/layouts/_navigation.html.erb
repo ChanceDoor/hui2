@@ -1,4 +1,10 @@
-<%= link_to image_tag('logo.png'), root_path, :class => 'brand' %>
+<%if user_signed_in?%>
+  <%= link_to image_tag('logo.png'), user_conferences_path,:class=>"logo"%>
+<%else%>
+  <%= link_to image_tag('logo.png'), root_path,:class=>"logo" %>
+<%end%>
+
+<%if controller_name == 'static' || controller_name == 'devise'%>
 <ul class="nav" style="margin:0px">
   <% if user_signed_in? %>
     <li>
@@ -26,3 +32,23 @@
     </li>
   <% end %>
 </ul>
+<%else%>
+  <%if current_user%>
+  <ul class="nav search-nav">
+    <li style="width: 100%;">
+      <form>
+        <input style="border-radius:12px;width: 60%;" /><button class="btn btn-danger btn-small search-btn" style="margin-top:0px;margin-left:4px;width:30%;max-width:60px"><%=image_tag 'search.png'%></button>
+      </form>
+    </li>
+</ul>
+<ul class="nav" style="float:right;margin: 6px 10px 0 0;">
+    <li class="hidden-phone"style="padding-top:5px;margin-right:10px;color:white">
+        <%=current_user.name%>,请点击您的个性化定制
+    </li>
+    <li>
+      <button class="btn btn-success btn-small vip-btn" style="margin-top:0px;" onclick="window.location.href='<%=user_informations_path%>'">VIP</button>
+    </li>
+</ul>
+  <%else%>
+  <%end%>
+<%end%>

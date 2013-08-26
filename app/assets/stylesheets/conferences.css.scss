@@ -1,21 +1,7 @@
 // Place all the styles related to the Conferences controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.navbar .brand{
-  color:#FFFFFF;
-  text-shadow:0 1px 0 rgb(138, 120, 120);
-  padding: 0 30px 0 0;
-}
-
-.navbar-inner{
-  height:30px;
-  background-image: linear-gradient(to bottom, #FF0000, #C20101);
-}
-
-.navbar .nav {
-  margin: 6px 10px 0 0;
-}
-
+.container{width:100%;}
 li {
   list-style-type:none;
 }
