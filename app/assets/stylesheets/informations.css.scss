@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .informations{position:relative;background-image:image-url("bg.jpg");}
+.info-main{width:950px;float:left}
+.left-tool{width:140px;height:600px;float:left;padding-left:10px}
+.right-options{float:left;width:300px;height:600px}
+.res{height:200px;margin-top:10px}
+.res-rect{height:50px;width:50px;padding:10px;background:rgba(168, 255, 0, 0.72);color:white;text-align:center}
 .menu{
   float:left;
   background: rgba(255, 82, 0, 0.6);
@@ -19,3 +24,13 @@
 .bluemenu:hover{background: rgba(0, 153, 255, 0.6);cursor:pointer}
 
 .info_items{color:white;width:60px;text-align:center;text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);}
+
+@media (max-width:480px){
+  .info-main{width:100%}
+  .left-tool{width:30%;height:600px;}
+  .right-options{width:70%;}
+  .menu{width:70px;height:70px}
+  .bluemenu{width:70px;height:70px}
+  .res{height:100px}
+  .res-rect{font-size:10px;width:40px;height:40px}
+}
