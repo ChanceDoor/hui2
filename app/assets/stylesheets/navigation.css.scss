@@ -16,7 +16,7 @@ text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 .search-nav{padding-left:10px;width:45%}
 .nav .search-btn{margin-top:0px;margin-left:4px;width:30%;max-width:60px}
 .nav li a{padding:0px;}
-.navbar-inner{border:0;height:30px;background-image: linear-gradient(to bottom, #FF0000, #C20101);}
+.navbar-inner{border:0;height:30px;background-color:red;background-image: linear-gradient(to bottom, #FF0000, #C20101);filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FF0000',endColorStr='#C20101',gradientType='0');}
 .logo{float:left}
 .vip-btn{width:50px}
 @media (max-width: 480px) {
