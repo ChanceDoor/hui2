@@ -1,7 +1,8 @@
 class Devise::RegistrationsController < DeviseController
   prepend_before_filter :require_no_authentication, :only => [ :new, :create, :cancel ]
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
-
+  skip_before_filter :verify_authenticity_token, :only => [:create]
+  respond_to :html, :json
   # GET /resource/sign_up
   def new
     resource = build_resource({})
@@ -96,7 +97,7 @@ class Devise::RegistrationsController < DeviseController
   # The path used after sign up. You need to overwrite this method
   # in your own RegistrationsController.
   def after_sign_up_path_for(resource)
-    admin_root_path
+    root_path
   end
 
   # The path used after sign up for inactive accounts. You need to overwrite

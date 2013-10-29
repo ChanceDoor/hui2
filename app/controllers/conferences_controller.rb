@@ -1,6 +1,7 @@
 #encoding:utf-8
 class ConferencesController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
+  respond_to :json, :html
   def index
     @conferences = Servconf.find(:all,:conditions => "month(start_at) = #{Time.now.month}")
     @conferences = @conferences.group_by{|a| a.start_at.day}
@@ -12,6 +13,7 @@ class ConferencesController < ApplicationController
     #p confs.inspect
     #@conferences = confs.group_by{|a| a.starttime.day}
     #@days = monthdays(Time.now.year,Time.now.month)
+    respond_with(@conferences)
   end
 
   def show
